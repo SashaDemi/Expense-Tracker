@@ -3,7 +3,7 @@ import {GlobalContext} from "../context/GlobalState";
 import {Transaction} from "./Transaction";
 
 export const TransactionList = () => {
-    const {transaction} = useContext(GlobalContext);
+    const {transactions} = useContext(GlobalContext);
 
     return (
         <div>
@@ -11,8 +11,8 @@ export const TransactionList = () => {
             <ul className="list">
                 {/*transactionItem - function argument, this argument - is
                 the value that will be passed to the function when it is called*/}
-                {transaction.map(transactionItem =>
-                    (<Transaction key={transaction.id} transactionItem={transactionItem}/>))}
+                {transactions.map(transactionItem =>
+                    (<Transaction key={transactions.id} transactionItem={transactionItem}/>))}
             </ul>
         </div>
     )
